@@ -3,6 +3,7 @@ package Presentation;
 import DataAccess.DAEmpleados;
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -16,15 +17,17 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     DAEmpleados empleado = new DAEmpleados();
+    int xMouse, yMouse;
 
     public Login() {
         //      setUndecorated(true);
+
         initComponents();
         setLocationRelativeTo(null);
         lblFondo.setOpaque(true);
         lblNavegacion.setOpaque(true);
         lblNavegacion.setBackground(new Color(0, 0, 0, 200));//Transparencia del panel, los 3 primeros son el color (RGB)y el ultimo es el nivel de transparencia
-
+        contenido.setBackground(new Color(255, 255, 255, 255));
         ImageIcon imagen0 = new ImageIcon(getClass().getResource("/Resources/images/fondo.png"));
 
         Icon fondo0 = new ImageIcon(imagen0.getImage().getScaledInstance(lblFondo.getWidth(), lblFondo.getHeight(), Image.SCALE_DEFAULT));
@@ -52,63 +55,103 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnSalir = new javax.swing.JButton();
         lblNavegacion = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        contenido = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         txtCredenciales = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         txtAcceso = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         btnIngresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+        lblNavegacion.setText("jLabel1");
+        lblNavegacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblNavegacion.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lblNavegacionMouseDragged(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
+        lblNavegacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblNavegacionMousePressed(evt);
+            }
+        });
+        jPanel1.add(lblNavegacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 40));
 
-        lblNavegacion.setText("jLabel1");
-        jPanel1.add(lblNavegacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 80));
+        contenido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        contenido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Swis721 BlkCn BT", 0, 36)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Nirmala UI", 1, 24)); // NOI18N
         jLabel6.setText("BIENVENIDO");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 190, 50));
+        contenido.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 150, 50));
 
         txtCredenciales.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(txtCredenciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 280, 30));
+        txtCredenciales.setForeground(new java.awt.Color(204, 204, 204));
+        txtCredenciales.setText("@@@@@@@@@@");
+        txtCredenciales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtCredencialesMousePressed(evt);
+            }
+        });
+        contenido.add(txtCredenciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 290, 30));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
-        jLabel4.setText("Contraseña");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 250, 30));
+        jLabel4.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel4.setText("Contraseña:");
+        contenido.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 110, 24));
 
         txtAcceso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel2.add(txtAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 280, 30));
+        txtAcceso.setForeground(new java.awt.Color(204, 204, 204));
+        txtAcceso.setText("Ejemplo: E3683002945");
+        txtAcceso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtAccesoMousePressed(evt);
+            }
+        });
+        txtAcceso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAccesoKeyPressed(evt);
+            }
+        });
+        contenido.add(txtAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 290, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
-        jLabel5.setText("Usuario");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 250, 30));
+        jLabel5.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel5.setText("Usuario:");
+        contenido.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 80, 24));
 
-        btnIngresar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        btnIngresar.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 110, 30));
+        contenido.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 100, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 450, 450));
+        btnSalir.setFont(new java.awt.Font("Nirmala UI", 1, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        contenido.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 100, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/images/user-24px.png"))); // NOI18N
+        contenido.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/images/pass-24px.png"))); // NOI18N
+        contenido.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
+
+        jPanel1.add(contenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 450, 510));
 
         lblFondo.setText("jLabel1");
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
@@ -143,9 +186,9 @@ public class Login extends javax.swing.JFrame {
         Icon pass = new ImageIcon(getClass().getResource("/Resources/images/pass-24px.png"));
         Icon lock = new ImageIcon(getClass().getResource("/Resources/images/lock-24px.png"));
         Icon unlock = new ImageIcon(getClass().getResource("/Resources/images/unlock-24px.png"));
-        if ("".equals(txtAcceso.getText())) {
+        if ("".equals(txtAcceso.getText())||"Ejemplo: E3683002945".equals(txtAcceso.getText())) {
             JOptionPane.showMessageDialog(null, "Ingrese su usuario", "Usuario", JOptionPane.PLAIN_MESSAGE, user);
-        } else if ("".equals(txtCredenciales.getText())) {
+        } else if ("".equals(txtCredenciales.getText())||"@@@@@@@@@@".equals(txtCredenciales.getText())) {
             JOptionPane.showMessageDialog(null, "Ingrese su contraseña", "Contraseña", JOptionPane.PLAIN_MESSAGE, pass);
         } else {
             if (empleado.validarLogin(txtAcceso.getText(), txtCredenciales.getText()) == 1) {
@@ -157,6 +200,53 @@ public class Login extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void lblNavegacionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNavegacionMousePressed
+        // TODO add your handling code here:
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_lblNavegacionMousePressed
+
+    private void lblNavegacionMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNavegacionMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_lblNavegacionMouseDragged
+
+    private void txtAccesoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAccesoMousePressed
+        // TODO add your handling code here:
+        if (txtAcceso.getText().equals("Ejemplo: E3683002945")) {
+            txtAcceso.setText("");
+            txtAcceso.setForeground(Color.black);
+        }
+        if (String.valueOf(txtCredenciales.getPassword()).isEmpty()) {
+            txtCredenciales.setText("@@@@@@@@@@");
+            txtCredenciales.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtAccesoMousePressed
+
+    private void txtCredencialesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCredencialesMousePressed
+        // TODO add your handling code here:
+        if (String.valueOf(txtCredenciales.getPassword()).equals("@@@@@@@@@@")) {
+            txtCredenciales.setText("");
+            txtCredenciales.setForeground(Color.black);
+        }
+        if (txtAcceso.getText().isEmpty()) {
+            txtAcceso.setText("Ejemplo: E3683002945");
+            txtAcceso.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtCredencialesMousePressed
+
+    private void txtAccesoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAccesoKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+
+            txtCredenciales.requestFocus();
+            txtCredenciales.setText("");
+            txtCredenciales.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtAccesoKeyPressed
 
     /**
      * @param args the command line arguments
@@ -197,11 +287,13 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JPanel contenido;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNavegacion;
     private javax.swing.JTextField txtAcceso;
