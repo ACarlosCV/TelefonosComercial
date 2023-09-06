@@ -12,4 +12,3 @@ public class BLEmpleados {
         return emp.Consultarproveedor(BEEmpleados);
     }
 }
-// hola xddd
