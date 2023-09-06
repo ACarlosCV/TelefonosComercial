@@ -107,15 +107,15 @@ public class MenuVendedor extends javax.swing.JFrame {
             .addGroup(MenuLayout.createSequentialGroup()
                 .addGap(155, 155, 155)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
                 .addComponent(btn_cliente)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(btn_producto)
-                .addGap(41, 41, 41)
+                .addGap(18, 18, 18)
                 .addComponent(btn_ventas)
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
                 .addComponent(btn_devol)
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
                 .addComponent(btn_reportes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_cerrarsesion)
@@ -212,7 +212,14 @@ public class MenuVendedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_devolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_devolActionPerformed
-        // TODO add your handling code here:
+        DevolucionVenta rep = new DevolucionVenta();
+        rep.setSize(966, 448);
+        rep.setLocation(0,0);
+        
+        con_vendedor.removeAll();
+        con_vendedor.add(rep, BorderLayout.CENTER);
+        con_vendedor.revalidate();
+        con_vendedor.repaint();
     }//GEN-LAST:event_btn_devolActionPerformed
 
     private void btn_reportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportesActionPerformed
@@ -288,6 +295,8 @@ public class MenuVendedor extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

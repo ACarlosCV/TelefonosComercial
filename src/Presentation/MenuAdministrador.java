@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package Presentation;
 
 import Aplication.NuevoProveedor;
@@ -47,6 +51,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         Menu.setBackground(new java.awt.Color(0, 0, 204));
 
         btn_trabajador.setText("Trabajadores");
+        btn_trabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_trabajadorActionPerformed(evt);
+            }
+        });
 
         btn_proveedor.setText("Proveedores");
         btn_proveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -207,15 +216,26 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_reportesActionPerformed
 
     private void btn_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedorActionPerformed
-        NuevoProveedor np=new NuevoProveedor();
-        np.setSize(966, 448);
-        np.setLocation(0,0);
+//        NuevoProveedor np=new NuevoProveedor();
+//        np.setSize(966, 448);
+//        np.setLocation(0,0);
+//        
+//        con_admi.removeAll();
+//        con_admi.add(np, BorderLayout.CENTER);
+//        con_admi.revalidate();
+//        con_admi.repaint();
+    }//GEN-LAST:event_btn_proveedorActionPerformed
+
+    private void btn_trabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trabajadorActionPerformed
+        List_trab nuevo=new List_trab();
+        nuevo.setSize(966, 448);
+        nuevo.setLocation(0,0);
         
         con_admi.removeAll();
-        con_admi.add(np, BorderLayout.CENTER);
+        con_admi.add(nuevo, BorderLayout.CENTER);
         con_admi.revalidate();
-        con_admi.repaint();
-    }//GEN-LAST:event_btn_proveedorActionPerformed
+        con_admi.repaint(); // TODO add your handling code here:
+    }//GEN-LAST:event_btn_trabajadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,6 +262,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

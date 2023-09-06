@@ -39,6 +39,7 @@ public class cliente extends javax.swing.JPanel {
         btn_editarcliente = new javax.swing.JButton();
         btn_eliminarcliente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btn_eliminarcliente1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(448, 966));
 
@@ -97,11 +98,16 @@ public class cliente extends javax.swing.JPanel {
         jLabel2.setText("Lista de Clientes");
         con_cliente.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, -1, -1));
 
+        btn_eliminarcliente1.setText("Eliminar");
+        con_cliente.add(btn_eliminarcliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, 150, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(con_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(con_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,6 +137,7 @@ public class cliente extends javax.swing.JPanel {
     private javax.swing.JButton btn_crearcliente;
     private javax.swing.JButton btn_editarcliente;
     private javax.swing.JButton btn_eliminarcliente;
+    private javax.swing.JButton btn_eliminarcliente1;
     private javax.swing.JPanel con_cliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

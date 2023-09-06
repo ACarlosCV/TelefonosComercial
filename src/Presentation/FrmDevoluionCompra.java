@@ -56,7 +56,7 @@ public class FrmDevoluionCompra extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/buscar-24px.png"))); // NOI18N
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/images/buscar-24px.png"))); // NOI18N
         btnBuscar.setText("Buscar");
 
         jLabel2.setText("Fecha inicial :");

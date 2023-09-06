@@ -47,59 +47,125 @@ public class NuevoProveedor extends javax.swing.JPanel {
 
         con_proveedor.setBackground(new java.awt.Color(255, 255, 255));
         con_proveedor.setPreferredSize(new java.awt.Dimension(966, 420));
-        con_proveedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        con_proveedor.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 130, 30));
 
         jLabel1.setText("RUC");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 170, 170));
-        con_proveedor.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 130, 30));
 
         jLabel2.setText("Razon Social");
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 120, 30));
-        con_proveedor.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 130, 30));
 
         jLabel3.setText("Nombre Comercial");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 120, 30));
 
         jLabel4.setText("Direccion");
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 120, 30));
-        con_proveedor.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 130, 30));
 
         jLabel5.setText("Teléfono");
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 120, 30));
-        con_proveedor.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 130, 30));
 
         jLabel6.setText("Estado");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 120, 30));
-        con_proveedor.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 170, 30));
 
         jLabel7.setText("Email");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 120, 30));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Seleccione--", "Activo", "No Activo" }));
-        con_proveedor.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 130, 30));
 
         jLabel8.setText("RUC");
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        con_proveedor.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 120, 30));
-        con_proveedor.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, 130, 30));
 
         jButton1.setText("Añadir FOTO");
-        con_proveedor.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 250, -1, -1));
+
+        javax.swing.GroupLayout con_proveedorLayout = new javax.swing.GroupLayout(con_proveedor);
+        con_proveedor.setLayout(con_proveedorLayout);
+        con_proveedorLayout.setHorizontalGroup(
+            con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(con_proveedorLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(con_proveedorLayout.createSequentialGroup()
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(80, 80, 80)
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(con_proveedorLayout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(460, 460, 460)
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(con_proveedorLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jButton1))))))
+        );
+        con_proveedorLayout.setVerticalGroup(
+            con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(con_proveedorLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(con_proveedorLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(con_proveedorLayout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(con_proveedorLayout.createSequentialGroup()
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(con_proveedorLayout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(con_proveedorLayout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(10, 10, 10)
+                .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(con_proveedorLayout.createSequentialGroup()
+                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton1))
+                    .addGroup(con_proveedorLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(con_proveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(con_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(con_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

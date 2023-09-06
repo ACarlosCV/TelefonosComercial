@@ -4,6 +4,8 @@
  */
 package Presentation;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Victoria
@@ -35,6 +37,7 @@ public class MenuAlmacenero extends javax.swing.JFrame {
         btn_producto = new javax.swing.JButton();
         btn_reportes = new javax.swing.JButton();
         btn_cerrarsesion = new javax.swing.JButton();
+        btn_producto1 = new javax.swing.JButton();
         Encabezado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -48,8 +51,18 @@ public class MenuAlmacenero extends javax.swing.JFrame {
         Menu.setBackground(new java.awt.Color(0, 0, 204));
 
         btn_trabajador.setText("Trabajdores");
+        btn_trabajador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_trabajadorActionPerformed(evt);
+            }
+        });
 
         btn_proveedor.setText("Proveedores");
+        btn_proveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_proveedorActionPerformed(evt);
+            }
+        });
 
         btn_cliente.setText("Clientes");
 
@@ -69,20 +82,29 @@ public class MenuAlmacenero extends javax.swing.JFrame {
 
         btn_cerrarsesion.setText("CERRAR SESIÓN");
 
+        btn_producto1.setText("Devolucion");
+        btn_producto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_producto1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout MenuLayout = new javax.swing.GroupLayout(Menu);
         Menu.setLayout(MenuLayout);
         MenuLayout.setHorizontalGroup(
             MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MenuLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator1)
-                    .addComponent(btn_trabajador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_proveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_producto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_reportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_cerrarsesion, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jSeparator1)
+                        .addComponent(btn_trabajador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_proveedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_cliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_reportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_cerrarsesion, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addComponent(btn_producto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         MenuLayout.setVerticalGroup(
@@ -96,9 +118,11 @@ public class MenuAlmacenero extends javax.swing.JFrame {
                 .addComponent(btn_proveedor)
                 .addGap(41, 41, 41)
                 .addComponent(btn_cliente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_producto)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_producto1)
+                .addGap(18, 18, 18)
                 .addComponent(btn_reportes)
                 .addGap(44, 44, 44)
                 .addComponent(btn_cerrarsesion)
@@ -195,12 +219,53 @@ public class MenuAlmacenero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_productoActionPerformed
-        // TODO add your handling code here:
+        producto producto=new producto();
+        producto.setSize(966, 448);
+        producto.setLocation(0,0);
+        
+        con_almac.removeAll();
+        con_almac.add(producto, BorderLayout.CENTER);
+        con_almac.revalidate();
+        con_almac.repaint();
     }//GEN-LAST:event_btn_productoActionPerformed
 
     private void btn_reportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_reportesActionPerformed
+
+    private void btn_trabajadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_trabajadorActionPerformed
+        List_trab nuevo=new List_trab();
+        nuevo.setSize(966, 448);
+        nuevo.setLocation(0,0);
+        
+        con_almac.removeAll();
+        con_almac.add(nuevo, BorderLayout.CENTER);
+        con_almac.revalidate();
+        con_almac.repaint();    // TODO add your handling code here:
+    }//GEN-LAST:event_btn_trabajadorActionPerformed
+
+    private void btn_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedorActionPerformed
+        ListadoProveedores nuevo=new ListadoProveedores();
+        nuevo.setSize(966, 448);
+        nuevo.setLocation(0,0);
+        
+        con_almac.removeAll();
+        con_almac.add(nuevo, BorderLayout.CENTER);
+        con_almac.revalidate();
+        con_almac.repaint(); 
+    }//GEN-LAST:event_btn_proveedorActionPerformed
+
+    private void btn_producto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_producto1ActionPerformed
+        
+        FrmDevoluionCompra nuevo=new FrmDevoluionCompra();
+        nuevo.setSize(966, 448);
+        nuevo.setLocation(0,0);
+        
+        con_almac.removeAll();
+        con_almac.add(nuevo, BorderLayout.CENTER);
+        con_almac.revalidate();
+        con_almac.repaint();
+    }//GEN-LAST:event_btn_producto1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,6 +309,7 @@ public class MenuAlmacenero extends javax.swing.JFrame {
     private javax.swing.JButton btn_cerrarsesion;
     private javax.swing.JButton btn_cliente;
     private javax.swing.JButton btn_producto;
+    private javax.swing.JButton btn_producto1;
     private javax.swing.JButton btn_proveedor;
     private javax.swing.JButton btn_reportes;
     private javax.swing.JButton btn_trabajador;

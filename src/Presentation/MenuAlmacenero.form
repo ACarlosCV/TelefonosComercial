@@ -79,14 +79,17 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jSeparator1" max="32767" attributes="0"/>
-                          <Component id="btn_trabajador" max="32767" attributes="0"/>
-                          <Component id="btn_proveedor" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_cliente" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_producto" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btn_reportes" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btn_cerrarsesion" alignment="0" pref="178" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btn_producto" min="-2" pref="178" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jSeparator1" max="32767" attributes="0"/>
+                              <Component id="btn_trabajador" max="32767" attributes="0"/>
+                              <Component id="btn_proveedor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_cliente" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_reportes" alignment="1" max="32767" attributes="0"/>
+                              <Component id="btn_cerrarsesion" alignment="0" pref="178" max="32767" attributes="0"/>
+                              <Component id="btn_producto1" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="21" max="32767" attributes="0"/>
                   </Group>
@@ -103,9 +106,11 @@
                       <Component id="btn_proveedor" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="btn_cliente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btn_producto" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btn_producto1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btn_reportes" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="btn_cerrarsesion" min="-2" max="-2" attributes="0"/>
@@ -121,11 +126,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Trabajdores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_trabajadorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_proveedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Proveedores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_proveedorActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_cliente">
               <Properties>
@@ -152,6 +163,14 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="CERRAR SESI&#xd3;N"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_producto1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Devolucion"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_producto1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
