@@ -1,36 +1,45 @@
-
 package Presentation;
 
+import DataAccess.DAEmpleados;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
- * @author Anthony
+ * @author LAB-USR-LSUR16-A202
  */
+/*La empresa X no tiene herramientas ....*/
+ /*unico objetivo general, especificos(para cumplir el general)*/
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    DAEmpleados empleado = new DAEmpleados();
+
     public Login() {
+        //      setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);
         lblFondo.setOpaque(true);
         lblNavegacion.setOpaque(true);
         lblNavegacion.setBackground(new Color(0, 0, 0, 200));//Transparencia del panel, los 3 primeros son el color (RGB)y el ultimo es el nivel de transparencia
-        
-        
-        ImageIcon imagen0= new ImageIcon(getClass().getResource("/Resources/images/fondo.png"));
-        
-        
-        Icon fondo0=new ImageIcon(imagen0.getImage().getScaledInstance(lblFondo.getWidth(), lblFondo.getHeight(), Image.SCALE_DEFAULT));               
-        
-        
-        lblFondo.setIcon(fondo0);          
+
+        ImageIcon imagen0 = new ImageIcon(getClass().getResource("/Resources/images/fondo.png"));
+
+        Icon fondo0 = new ImageIcon(imagen0.getImage().getScaledInstance(lblFondo.getWidth(), lblFondo.getHeight(), Image.SCALE_DEFAULT));
+
+        lblFondo.setIcon(fondo0);
         this.repaint();
+
+//        Login titleBar = new Login();
+//        titleBar.setBackground(Color.LIGHT_GRAY);
+//        titleBar.setLayout(new BorderLayout());
+//        
+//        JFrame frame = new JFrame();
+//        frame.setUndecorated(true);
+//        frame.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+//        frame.add(titleBar, BorderLayout.NORTH);
     }
 
     /**
@@ -43,24 +52,72 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        lblFondo = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
         lblNavegacion = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txtCredenciales = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        txtAcceso = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblFondo.setText("jLabel1");
-        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 1, 630, 650));
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
 
         lblNavegacion.setText("jLabel1");
         jPanel1.add(lblNavegacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 80));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Swis721 BlkCn BT", 0, 36)); // NOI18N
+        jLabel6.setText("BIENVENIDO");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 190, 50));
+
+        txtCredenciales.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtCredenciales, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 280, 30));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        jLabel4.setText("Contraseña");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 250, 30));
+
+        txtAcceso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPanel2.add(txtAcceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 280, 30));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        jLabel5.setText("Usuario");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 250, 30));
+
+        btnIngresar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
+        btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 110, 30));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 450, 450));
+
+        lblFondo.setText("jLabel1");
+        jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,6 +126,37 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        String[] arreglo = {"Si", "No"};
+        int opcion = JOptionPane.showOptionDialog(null, "¿Desea Salir?", "Salir", 0, JOptionPane.QUESTION_MESSAGE, null, arreglo, "Si");
+        if (arreglo[opcion] == "Si") {
+            dispose();
+        } else {
+            //Si no le pongo nada se cancela
+        }
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        MenuVendedor ventana = new MenuVendedor();
+        Icon user = new ImageIcon(getClass().getResource("/Resources/images/user-24px.png"));
+        Icon pass = new ImageIcon(getClass().getResource("/Resources/images/pass-24px.png"));
+        Icon lock = new ImageIcon(getClass().getResource("/Resources/images/lock-24px.png"));
+        Icon unlock = new ImageIcon(getClass().getResource("/Resources/images/unlock-24px.png"));
+        if ("".equals(txtAcceso.getText())) {
+            JOptionPane.showMessageDialog(null, "Ingrese su usuario", "Usuario", JOptionPane.PLAIN_MESSAGE, user);
+        } else if ("".equals(txtCredenciales.getText())) {
+            JOptionPane.showMessageDialog(null, "Ingrese su contraseña", "Contraseña", JOptionPane.PLAIN_MESSAGE, pass);
+        } else {
+            if (empleado.validarLogin(txtAcceso.getText(), txtCredenciales.getText()) == 1) {
+                JOptionPane.showMessageDialog(null, "Acceso autorizado", "Validacion de usuario", JOptionPane.PLAIN_MESSAGE, unlock);
+                ventana.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Credenciales incorrectas", "Validacion de usuario", JOptionPane.PLAIN_MESSAGE, lock);
+            }
+        }
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,6 +184,7 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -106,8 +195,16 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNavegacion;
+    private javax.swing.JTextField txtAcceso;
+    private javax.swing.JPasswordField txtCredenciales;
     // End of variables declaration//GEN-END:variables
 }
